@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mspayments
+spec:
+  selector:
+    app: mspayments
+  ports:
+  - name: http
+    port: 7118
+    targetPort: 80
+  type: LoadBalancer

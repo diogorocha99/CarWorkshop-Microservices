@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msusers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msusers
+  template:
+    metadata:
+      labels:
+        app: msusers
+    spec:
+      containers:
+      - name: msusers
+        image: docker.io/diogorocha999/msusers
+        ports:
+        - containerPort: 80
+        env:
+        - name: DBServer
+          value: "ms-sql-server"

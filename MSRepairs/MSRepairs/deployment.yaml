@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msrepairs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msrepairs
+  template:
+    metadata:
+      labels:
+        app: msrepairs
+    spec:
+      containers:
+      - name: msrepairs
+        image: docker.io/diogorocha999/msrepairs
+        ports:
+        - containerPort: 80
+        env:
+        - name: DBServer
+          value: "ms-sql-server"

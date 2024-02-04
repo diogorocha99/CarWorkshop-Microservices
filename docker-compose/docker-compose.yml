@@ -1,0 +1,81 @@
+version: '3'
+name: AIS_TP
+services:
+  ms-sql-server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Qwerty12345"
+      MYSQL_PID: Express
+    ports:
+      - "1439:1433"
+  msusers:
+
+    image: msusers
+    build:
+      context: .
+      dockerfile: MSUsers/Dockerfile
+    environment: 
+        DBServer: "ms-sql-server"
+    ports:
+      - "7023:80"
+  msrequests:
+
+    image: msrequests
+    build:
+      context: .
+      dockerfile: MSRequests/Dockerfile
+    environment: 
+        DBServer: "ms-sql-server"
+    ports:
+      - "7171:80"
+
+  msrepairs:
+    image: msrepairs
+    build:
+      context: .
+      dockerfile: MSRepairs/Dockerfile
+    environment: 
+        DBServer: "ms-sql-server"
+    ports:
+      - "7159:80"
+
+  mspayments:
+    image: mspayments
+    build:
+      context: .
+      dockerfile: MSPayments/Dockerfile
+    environment: 
+        DBServer: "ms-sql-server"
+    ports:
+      - "7118:80"
+
+  apigateway:
+    image: apigateway
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    ports:
+      - "8001:80"
+
+  scc_logs:
+    image: scclogs
+    build:
+      context: .
+      dockerfile: SCCLogs/Dockerfile
+    environment: 
+        DBServer: "ms-sql-server"
+    ports:
+      - "7292:80"
+
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - rabbitmq:/rabbitmq
+volumes:
+   rabbitmq:

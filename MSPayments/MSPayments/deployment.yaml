@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mspayments
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mspayments
+  template:
+    metadata:
+      labels:
+        app: mspayments
+    spec:
+      containers:
+      - name: mspayments
+        image: docker.io/diogorocha999/mspayments
+        ports:
+        - containerPort: 80
+        env:
+        - name: DBServer
+          value: "ms-sql-server"

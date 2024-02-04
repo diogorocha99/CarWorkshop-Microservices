@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: msusers
+spec:
+  selector:
+    app: msusers
+  ports:
+  - name: http
+    port: 7023
+    targetPort: 80
+  type: LoadBalancer

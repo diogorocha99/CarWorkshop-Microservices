@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msrequests
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msrequests
+  template:
+    metadata:
+      labels:
+        app: msrequests
+    spec:
+      containers:
+      - name: msrequests
+        image: docker.io/diogorocha999/msrequests
+        ports:
+        - containerPort: 80
+        env:
+        - name: DBServer
+          value: "ms-sql-server"

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msgarages
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msgarages
+  template:
+    metadata:
+      labels:
+        app: msgarages
+    spec:
+      containers:
+      - name: msgarages
+        image: docker.io/diogorocha999/msgarages
+        ports:
+        - containerPort: 80
+        env:
+        - name: DBServer
+          value: "ms-sql-server"

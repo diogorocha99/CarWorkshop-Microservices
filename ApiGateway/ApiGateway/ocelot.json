@@ -1,0 +1,300 @@
+﻿{
+  "Routes": [
+    //Authentication Controller
+    {
+      "UpstreamPathTemplate": "/api/Authentication",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msusers",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Authentication"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Authentication/ValidateToken",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msusers",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Authentication/ValidateToken"
+    },
+    {
+      "UpstreamPathTemplate": "/api/User",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msusers",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User"
+    },
+    {
+      "UpstreamPathTemplate": "/api/User/Role",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msusers",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/Role"
+    },
+    {
+      "UpstreamPathTemplate": "/api/User/Delete",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msusers",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/Delete"
+    },
+    {
+      "UpstreamPathTemplate": "/api/User/ChangePassword",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msusers",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/ChangePassword"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Vehicle",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msusers",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Vehicle"
+    },
+    {
+      "UpstreamPathTemplate": "/api/User/RolebyEmail",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msusers",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/RolebyEmail"
+    },
+
+
+    //Garages API
+    {
+      "UpstreamPathTemplate": "/api/Garage",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msgarages",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Garage"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Garage/CreateGarage",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msgarages",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Garage/CreateGarage"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Garage/AddEmployeeGarage",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msgarages",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Garage/AddEmployeeGarage"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Garage/CheckEmployeeGarage",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msgarages",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Garage/CheckEmployeeGarage"
+    },
+
+
+    //Request API
+    {
+      "UpstreamPathTemplate": "/api/Request",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msrequests",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Request"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Request/RequestInfo",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msrequests",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Request/RequestInfo"
+    },
+
+
+    //Repair Api
+    {
+      "UpstreamPathTemplate": "/api/Repair",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msrepairs",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Repair"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Repair/CurrentReparations",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msrepairs",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Repair/CurrentReparations"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Repair/AddPart",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msrepairs",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Repair/AddPart"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Repair/State",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msrepairs",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Repair/State"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Stock",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msrepairs",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Stock"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Stock/RemoveStock",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "msrepairs",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Stock/RemoveStock"
+    },
+
+
+    //Payments API
+
+    {
+      "UpstreamPathTemplate": "/api/Payments",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payments",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Payments"
+    },
+
+    //Logs API
+
+    {
+      "UpstreamPathTemplate": "/api/Logs/GetLogs",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "scc-logs",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Logs/GetLogs"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Logs/InsertLogs",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "scc-logs",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Logs/InsertLogs"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl":  "http://localhost:80"
+  }
+}
